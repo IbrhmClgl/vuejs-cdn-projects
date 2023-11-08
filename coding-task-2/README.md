@@ -12,4 +12,4 @@ Fulfill the following tasks:
   - Ensure that the version does not count up on the screen. Only the initial value of the data property should displayed. Do not remove the setInterval in the mount method. Use a directive!
 - Render the data property text as HTML
 - The mustache tags should not get rendered. They should get printed out on the screen
-- All errors in the devTools console are removed
+- All errors in the devTools console are removed.
