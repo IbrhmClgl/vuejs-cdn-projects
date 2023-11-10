@@ -547,4 +547,64 @@ Vue.createApp({
       ],
     };
   },
+  computed: {
+    filterTableHeader() {
+      // solution 1
+      //   let title = Object.keys(this.books[0]).filter(
+      //     (key) => key.includes("title") && !key.includes("subtitle")
+      //   );
+      //   let isbn = Object.keys(this.books[0]).filter((key) =>
+      //     key.includes("isbn")
+      //   );
+      //   let author = Object.keys(this.books[0]).filter((key) =>
+      //     key.includes("author")
+      //   );
+      //   let publisher = Object.keys(this.books[0]).filter((key) =>
+      //     key.includes("publisher")
+      //   );
+      //   let price = Object.keys(this.books[0]).filter((key) =>
+      //     key.includes("price")
+      //   );
+      //   let numPages = Object.keys(this.books[0]).filter((key) =>
+      //     key.includes("numPages")
+      //   );
+      //   return {
+      //     title,
+      //     isbn,
+      //     author,
+      //     publisher,
+      //     price,
+      //     numPages,
+      //   };
+
+      // solution 2
+      const validKeys = [
+        "title",
+        "isbn",
+        "author",
+        "publisher",
+        "price",
+        "numPages",
+      ];
+
+      const singleBookItem = this.books[0];
+
+      const columnResult = Object.keys(singleBookItem).filter((propKey) => {
+        return validKeys.includes(propKey);
+      });
+
+      return columnResult;
+    },
+    filterPublisher() {
+      return this.books.filter((item) => item.publisher === "O'Reilly Media");
+    },
+  },
+  methods: {
+    discountedPrice(discountValue) {
+      let result =
+        Number(discountValue.substring(1)) -
+        Number(discountValue.substring(1)) * 0.2;
+      return result.toFixed(2);
+    },
+  },
 }).mount("#app");
