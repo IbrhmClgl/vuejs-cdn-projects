@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>color-mixer</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-container" v-bind:style="{backgroundColor: randomBgColor}">
+            <div>
+                <header class="header">
+                    <section>
+                        <p>r</p><input class="red" type="range" step="1" min="0" max="255" value="0">
+                    </section>
+                    <section>
+                        <p>g</p><input class="green" type="range" step="1" min="0" max="255" value="0">
+                    </section>
+                    <section>
+                        <p>b</p><input class="blue" type="range" step="1" min="0" max="255" value="0">
+                    </section>
+                    <p class="rgb">{{randomBgColor}}</p>
+                    <button @click="loadColorData">Random Color</button>
+                </header>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
