@@ -1,0 +1,14 @@
+{
+  "name": "coding-task-12",
+  "version": "1.0.0",
+  "description": "Please refactor the Todo app to a VueJS App. Feel free to use your old pure javascript version as base for this one.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
